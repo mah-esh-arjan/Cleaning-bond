@@ -44,17 +44,20 @@ export function Home() {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {featuresData.map(({ color, title, icon, description }) => (
-              <FeatureCard
-                key={title}
-                color={color}
-                title={title}
-                icon={React.createElement(icon, {
-                  className: "w-5 h-5 text-white",
-                })}
-                description={description}
-              />
+              <div className="relative group" key={title}>
+                <div className={`relative bg-${color}-500 hover:bg-${color}-600 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 p-4 rounded-lg overflow-hidden`}>
+                  {React.createElement(icon, {
+                    className: "w-5 h-5 text-white mx-auto",
+                  })}
+                  <h3 className="text-lg font-semibold text-black group-hover:text-white mt-2">{title}</h3>
+                  <p className="text-black-600">{description}</p>
+                  <div className={`absolute inset-0 bg-opacity-0 group-hover:bg-opacity-80 transition duration-300 ease-in-out`} />
+                </div>
+              </div>
             ))}
           </div>
+
+
           <div className="mt-32 flex flex-wrap items-center">
             <div className="mx-auto -mt-8 w-full px-4 md:w-5/12">
               <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-white p-3 text-center shadow-lg">

@@ -2,29 +2,34 @@ import {
   StarIcon,
   ArrowPathIcon,
   FingerPrintIcon,
+  HomeIcon,
+  SparklesIcon,
+  WindowIcon,
+
 } from "@heroicons/react/24/solid";
 
 export const featuresData = [
   {
     color: "blue",
-    title: "Awarded Agency",
-    icon: StarIcon,
+    title: "House CLEANING SERVICE",
+    icon: HomeIcon,
     description:
-      "Divide details about your product or agency work into parts. A paragraph describing a feature will be enough.",
+      "Our house cleaning service includes bond cleaning, end of lease cleaning, and exit cleaning for a thorough and hassle-free experience.",
   },
   {
     color: "red",
-    title: "Free Revisions",
-    icon: ArrowPathIcon,
+    title: "STEAM CLEANING SERVICE",
+    icon: SparklesIcon,
     description:
-      "Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious.",
+      "For our steam cleaning service, we specialize in both carpet cleaning and upholstery cleaning to refresh and revitalize your home's interior.",
   },
   {
     color: "teal",
-    title: "Verified Company",
-    icon: FingerPrintIcon,
+    title: "WINDOW CLEANING SERVICE",
+    icon: WindowIcon,
     description:
-      "Write a few lines about each one. A paragraph describing a feature will be enough. Keep you user engaged!",
+
+      "Our window cleaning service includes glass and mirror cleaning, interior and exterior window cleaning, and power/pressure washing for a pristine home."
   },
 ];
 
