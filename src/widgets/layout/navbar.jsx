@@ -9,6 +9,7 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import logoImage from '../../../public/img/logo.jpg';
 
 export function Navbar({ brandName, routes, action }) {
   const [openNav, setOpenNav] = React.useState(false);
@@ -70,14 +71,14 @@ export function Navbar({ brandName, routes, action }) {
         </Link>
         <div className="hidden lg:block">{navList}</div>
         <div className="hidden gap-2 lg:flex">
-          <a
+          {/* <a
             href="https://www.material-tailwind.com/blocks?ref=mtkr"
             target="_blank"
           >
             <Button variant="text" size="sm" color="white" fullWidth>
               pro version
             </Button>
-          </a>
+          </a> */}
           {React.cloneElement(action, {
             className: "hidden lg:inline-block",
           })}
@@ -108,7 +109,7 @@ export function Navbar({ brandName, routes, action }) {
             className="mb-2 block"
           >
             <Button variant="text" size="sm" fullWidth>
-              pro version
+              S
             </Button>
           </a>
           {React.cloneElement(action, {
@@ -121,18 +122,23 @@ export function Navbar({ brandName, routes, action }) {
 }
 
 Navbar.defaultProps = {
-  brandName: "Material Tailwind React",
+  brandName: (
+    <Link to="/">
+      <img src={logoImage} alt="Logo" className="mr-4 ml-2 cursor-pointer py-1.5" style={{ width: '150px', height: '150px' }} />
+    </Link>
+  ),
   action: (
     <a
       href="https://www.creative-tim.com/product/material-tailwind-kit-react"
       target="_blank"
     >
       <Button variant="gradient" size="sm" fullWidth>
-        free download
+        Get in Touch
       </Button>
     </a>
   ),
 };
+
 
 Navbar.propTypes = {
   brandName: PropTypes.string,
